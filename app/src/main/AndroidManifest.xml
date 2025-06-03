@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.optimum.AvicaStaff">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <application
+        android:name="com.optimum.AvicaStaff.AvicaStaff"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.TeleMedicineReport"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.TeleMedicine.NewAppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.SelectUserActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.History.AddMedication"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.History.AddSurgicalProcedure"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.History.AddFamilyHistory"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.History.AddPresentComplain"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientListActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.BloodGlucose.WatchTutorialActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.BloodGlucose.ManualActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.BloodGlucose.AutomaticActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Temperature.WatchTutorialActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Temperature.ManualActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Temperature.AutomaticActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Spo2.WatchTutorialActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Spo2.ManualActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Spo2.AutomaticActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Respiratory.WatchTutorialActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Respiratory.ManualActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Respiratory.AutomaticActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Ecg.WatchTutorialActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Ecg.ManualActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Ecg.AutomaticActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.BloodPressure.WatchTutorialActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.BloodPressure.ManualActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.BloodPressure.AutomaticActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.History.HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.MedicationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.EducationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.ReportActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.TeleMedicine.TelemedActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.TutorialActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Respiratory.RespiratoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Spo2.Spo2Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Ecg.EcgActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Temperature.TemperatureActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.BloodGlucose.BloodGlucoseActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.BloodPressure.BloodPressureActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.MeasurmentsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.DocProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.TechnicalSupportActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.TermsAndConditionActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.ForgetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PinActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.ComplianceActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.RAGActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.BloodGlucose.DoctorBloodGlucoseActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.BloodPressure.DoctorBloodPressureActivity"
+            android:exported="false" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+
+    </application>
+
+</manifest>
