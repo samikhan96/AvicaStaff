@@ -2,15 +2,18 @@ package com.optimum.AvicaStaff.UI.Doctor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.optimum.AvicaStaff.HttpUtils.AppServices;
 import com.optimum.AvicaStaff.Listener.ServiceListener;
+import com.optimum.AvicaStaff.Models.PatientList;
 import com.optimum.AvicaStaff.Models.PatientProfile;
 import com.optimum.AvicaStaff.Models.User;
 import com.optimum.AvicaStaff.R;
@@ -24,13 +27,17 @@ public class ProfileActivity extends AppCompatActivity {
     private CircleImageView prpfile_img;
     TextView tvName, tvEmail, tvDOB, tvPhone, tvHeight, tvWeight, tvLanguage, tvSSN, tvSubscriberId, tvMeasurementSystem, tvTimeZone;
     PatientProfile patientProfile;
-    User user;
-
+    String Patient_id;
+    LinearLayout l1,l2;
+    ImageView item_1,item_2,item_3,item_4,item_5,item_6,item_7,item_8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        user = UserPrefs.getGetUser();
+
+        Patient_id = getIntent().getStringExtra("patient_data");
+
+
         ImageView back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,9 +59,86 @@ public class ProfileActivity extends AppCompatActivity {
         tvSubscriberId = findViewById(R.id.tv_9);
         tvMeasurementSystem = findViewById(R.id.tv_10);
         tvTimeZone = findViewById(R.id.tv_11);
+        item_1 = findViewById(R.id.item_1);
+        item_2 = findViewById(R.id.item_2);
+        item_3 = findViewById(R.id.item_3);
+        item_4 = findViewById(R.id.item_4);
+        item_5 = findViewById(R.id.item_5);
+        item_6 = findViewById(R.id.item_6);
+        item_7 = findViewById(R.id.item_7);
+        item_8 = findViewById(R.id.item_8);
+        l1 = findViewById(R.id.l1);
+        l2 = findViewById(R.id.l2);
 
+        l1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, DashboardActivity.class));
+                finish();
+            }
+        });
+        l2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, RAGActivity.class));
+                finish();
+            }
+        });
 
-        getProfile(user.id);
+        item_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        item_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        item_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        item_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        item_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, MeasurmentsActivity.class));
+                finish();
+
+            }
+        });
+        item_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        item_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        item_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        getProfile(Patient_id);
     }
 
     public void getProfile(String id){
