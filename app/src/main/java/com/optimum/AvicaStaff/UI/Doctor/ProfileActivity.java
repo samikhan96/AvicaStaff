@@ -28,7 +28,6 @@ public class ProfileActivity extends AppCompatActivity {
     TextView tvName, tvEmail, tvDOB, tvPhone, tvHeight, tvWeight, tvLanguage, tvSSN, tvSubscriberId, tvMeasurementSystem, tvTimeZone;
     PatientProfile patientProfile;
     String Patient_id;
-    LinearLayout l1,l2;
     ImageView item_1,item_2,item_3,item_4,item_5,item_6,item_7,item_8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,23 +66,7 @@ public class ProfileActivity extends AppCompatActivity {
         item_6 = findViewById(R.id.item_6);
         item_7 = findViewById(R.id.item_7);
         item_8 = findViewById(R.id.item_8);
-        l1 = findViewById(R.id.l1);
-        l2 = findViewById(R.id.l2);
 
-        l1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ProfileActivity.this, DashboardActivity.class));
-                finish();
-            }
-        });
-        l2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ProfileActivity.this, RAGActivity.class));
-                finish();
-            }
-        });
 
         item_1.setOnClickListener(new View.OnClickListener() {
             @Override

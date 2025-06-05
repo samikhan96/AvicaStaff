@@ -192,6 +192,9 @@
         <activity
             android:name="com.optimum.AvicaStaff.UI.Doctor.ComplianceActivity"
             android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.RAGAnalaysisActivity"
+            android:exported="false" />
 
         <activity
             android:name="com.optimum.AvicaStaff.UI.Doctor.RAGActivity"

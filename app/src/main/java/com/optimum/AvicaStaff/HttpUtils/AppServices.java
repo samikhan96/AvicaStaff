@@ -10,6 +10,7 @@ import com.optimum.AvicaStaff.Models.Medication;
 import com.optimum.AvicaStaff.Models.Notifications;
 import com.optimum.AvicaStaff.Models.PatientList;
 import com.optimum.AvicaStaff.Models.PatientProfile;
+import com.optimum.AvicaStaff.Models.RAG;
 import com.optimum.AvicaStaff.Models.Reports;
 import com.optimum.AvicaStaff.Models.User;
 import com.optimum.AvicaStaff.Utils.UserPrefs;
@@ -272,6 +273,25 @@ public class AppServices {
             public void success(JSONObject success) {
                 try {
                     ArrayList<PatientList> data = new ArrayList<>(Arrays.asList(GsonUtils.fromJSON(success.getJSONArray("data").toString(), PatientList[].class)));
+                    listener.success(data);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void error(VolleyError error) {
+                listener.error(error.getMessage());
+            }
+        });
+
+    }
+    public static void getRAG(String TAG, final ServiceListener<ArrayList<RAG>, String> listener) {
+        RestAPI.GetUrlEncodedRequest(TAG, ConfigConstants.getRAG, new ServiceListener<JSONObject, VolleyError>() {
+            @Override
+            public void success(JSONObject success) {
+                try {
+                    ArrayList<RAG> data = new ArrayList<>(Arrays.asList(GsonUtils.fromJSON(success.getJSONArray("data").toString(), RAG[].class)));
                     listener.success(data);
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -131,7 +131,7 @@ public class DashboardActivity extends AppCompatActivity {
         l2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DashboardActivity.this, MeasurmentsActivity.class));
+                startActivity(new Intent(DashboardActivity.this, RAGActivity.class));
                 finish();
             }
         });
