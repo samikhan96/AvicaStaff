@@ -286,8 +286,8 @@ public class AppServices {
         });
 
     }
-    public static void getRAG(String TAG, final ServiceListener<ArrayList<RAG>, String> listener) {
-        RestAPI.GetUrlEncodedRequest(TAG, ConfigConstants.getRAG, new ServiceListener<JSONObject, VolleyError>() {
+    public static void getRAG(String TAG,String type, final ServiceListener<ArrayList<RAG>, String> listener) {
+        RestAPI.GetUrlEncodedRequest(TAG, ConfigConstants.getRAG+type, new ServiceListener<JSONObject, VolleyError>() {
             @Override
             public void success(JSONObject success) {
                 try {

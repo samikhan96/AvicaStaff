@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_bg_new"
+    tools:context=".UI.Doctor.PrivacyPolicyActivity"
     android:orientation="vertical"
-    tools:context=".UI.Doctor.PrivacyPolicyActivity">
+    android:background="@drawable/app_bg_new">
 
     <RelativeLayout
         android:id="@+id/toolbar"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:padding="@dimen/_10sdp"
-            android:text="RAG Analaysis"
+            android:text="Telemedicine"
             android:textColor="@color/black"
             android:textSize="@dimen/_16ssp"
             android:textStyle="bold" />
@@ -80,12 +80,12 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="40dp"
+                            android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
                             android:layout_marginLeft="@dimen/_10sdp"
                             android:layout_weight="1"
                             android:padding="@dimen/_5sdp"
-                            android:text="Patient Name"
+                            android:text="Name"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12ssp" />
 
@@ -95,7 +95,7 @@
                             android:layout_centerInParent="true"
                             android:layout_weight="1"
                             android:padding="@dimen/_5sdp"
-                            android:text="Value"
+                            android:text="Email"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12ssp" />
 
@@ -105,16 +105,7 @@
                             android:layout_centerInParent="true"
                             android:layout_weight="1"
                             android:padding="@dimen/_5sdp"
-                            android:text="Unit "
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_12ssp" />
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:layout_weight="1"
-                            android:padding="@dimen/_5sdp"
-                            android:text="Measurement"
+                            android:text="Phone"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12ssp" />
 
@@ -125,11 +116,19 @@
                             android:layout_centerInParent="true"
                             android:layout_weight="1"
                             android:padding="@dimen/_5sdp"
-                            android:text="status"
+                            android:text="Relationship"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12ssp" />
 
-
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_weight="1"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Action"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp" />
 
                     </LinearLayout>
 
@@ -155,7 +154,3 @@
     </HorizontalScrollView>
 
 </LinearLayout>
-
-
-
-

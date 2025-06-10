@@ -31,7 +31,7 @@ public class RAGAnalaysisActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rag_analaysis);
-        recyclerView = findViewById(R.id.listView);
+        recyclerView = findViewById(R.id.list1);
 
 
         ImageView back = findViewById(R.id.back);
@@ -42,11 +42,12 @@ public class RAGAnalaysisActivity extends AppCompatActivity {
             }
         });
 
+        getRAG();
     }
-    public void getNotification() {
+    public void getRAG() {
         AppUtils.showProgressDialog(RAGAnalaysisActivity.this);
 
-        AppServices.getRAG(NotificationActivity.class.getSimpleName(), new ServiceListener<ArrayList<RAG>, String>() {
+        AppServices.getRAG(RAGAnalaysisActivity.class.getSimpleName(),RAGActivity.RAG_type, new ServiceListener<ArrayList<RAG>, String>() {
             @Override
             public void success(ArrayList<RAG> success) {
 

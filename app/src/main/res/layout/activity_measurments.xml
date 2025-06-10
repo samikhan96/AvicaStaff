@@ -29,6 +29,8 @@
     </RelativeLayout>
 
     <ScrollView
+        android:paddingBottom="@dimen/_10sdp"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -156,6 +158,17 @@
 
     </LinearLayout>
     </ScrollView>
+    <Button
+        android:layout_margin="@dimen/_10sdp"
+        android:textAllCaps="false"
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/btn_bg"
+        android:text="Add Measurment"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_14ssp" />
 
 
 </LinearLayout>

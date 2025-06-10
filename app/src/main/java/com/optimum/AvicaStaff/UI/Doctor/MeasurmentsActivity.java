@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -21,8 +22,8 @@ import com.optimum.AvicaStaff.UI.Doctor.Temperature.TemperatureActivity;
 
 public class MeasurmentsActivity extends AppCompatActivity {
 
-    LinearLayout l1;
     ImageView item_1,item_2,item_3,item_4,item_5,item_6;
+    Button loginBtn;
 
 
     @Override
@@ -31,27 +32,28 @@ public class MeasurmentsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_measurments);
 
 
-        l1 = findViewById(R.id.l1);
         item_1 = findViewById(R.id.item_1);
         item_2 = findViewById(R.id.item_2);
         item_3 = findViewById(R.id.item_3);
         item_4 = findViewById(R.id.item_4);
         item_5 = findViewById(R.id.item_5);
         item_6 = findViewById(R.id.item_6);
+        loginBtn = findViewById(R.id.loginBtn);
 
 
-        l1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MeasurmentsActivity.this, DashboardActivity.class));
-                finish();
-            }
-        });
+
 
         item_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MeasurmentsActivity.this, BloodGlucoseActivity.class));
+            }
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MeasurmentsActivity.this, AddMeasurmentActivity.class));
             }
         });
 

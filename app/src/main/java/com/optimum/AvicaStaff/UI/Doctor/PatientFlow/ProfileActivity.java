@@ -1,4 +1,4 @@
-package com.optimum.AvicaStaff.UI.Doctor;
+package com.optimum.AvicaStaff.UI.Doctor.PatientFlow;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,19 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.optimum.AvicaStaff.HttpUtils.AppServices;
 import com.optimum.AvicaStaff.Listener.ServiceListener;
-import com.optimum.AvicaStaff.Models.PatientList;
 import com.optimum.AvicaStaff.Models.PatientProfile;
-import com.optimum.AvicaStaff.Models.User;
 import com.optimum.AvicaStaff.R;
+import com.optimum.AvicaStaff.UI.Doctor.MeasurmentsActivity;
 import com.optimum.AvicaStaff.Utils.AppUtils;
-import com.optimum.AvicaStaff.Utils.UserPrefs;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

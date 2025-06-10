@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.optimum.AvicaStaff.Models.Notifications;
 import com.optimum.AvicaStaff.Models.RAG;
 import com.optimum.AvicaStaff.R;
+import com.optimum.AvicaStaff.Utils.AppUtils;
 
 import java.util.ArrayList;
 
@@ -31,15 +32,20 @@ public class AdapterRag_analaysis extends RecyclerView.Adapter<AdapterRag_analay
 
     @Override
     public AdapterRag_analaysis.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new AdapterRag_analaysis.MyViewHolder(layoutInflater.inflate(R.layout.pushnoti_item, parent, false));
+        return new AdapterRag_analaysis.MyViewHolder(layoutInflater.inflate(R.layout.rag_analaysis_item, parent, false));
     }
 
     @Override
     public void onBindViewHolder(AdapterRag_analaysis.MyViewHolder holder, int position) {
         RAG pamModel = pamModelArrayList.get(position);
 
-        holder.text_heading.setText(pamModel.title);
-        holder.text_discription.setText(pamModel.type);
+        holder.tv_1.setText(pamModel.patient);
+        holder.tv_2.setText(pamModel.value1);
+        holder.tv_3.setText(pamModel.unit);
+        holder.tv_4.setText(pamModel.type);
+        holder.tv_5.setText(pamModel.status);
+//        AppUtils.setFormattedDate(pamModel.created_at,holder.tv_5);
+
 
 
 
@@ -51,12 +57,15 @@ public class AdapterRag_analaysis extends RecyclerView.Adapter<AdapterRag_analay
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView text_heading,text_discription;
+        private TextView tv_1,tv_2,tv_3,tv_4,tv_5;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            text_heading = itemView.findViewById(R.id.text_heading);
-            text_discription =  itemView.findViewById(R.id.text_discription);
+            tv_1 = itemView.findViewById(R.id.tv_1);
+            tv_2 =  itemView.findViewById(R.id.tv_2);
+            tv_3 =  itemView.findViewById(R.id.tv_3);
+            tv_4 =  itemView.findViewById(R.id.tv_4);
+            tv_5 =  itemView.findViewById(R.id.tv_5);
 
         }
 

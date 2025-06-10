@@ -13,13 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.optimum.AvicaStaff.Models.Medication;
 import com.optimum.AvicaStaff.Models.PatientList;
-import com.optimum.AvicaStaff.Models.PatientProfile;
 import com.optimum.AvicaStaff.R;
-import com.optimum.AvicaStaff.UI.Doctor.DocProfileActivity;
-import com.optimum.AvicaStaff.UI.Doctor.ProfileActivity;
-import com.optimum.AvicaStaff.Utils.AppUtils;
+import com.optimum.AvicaStaff.UI.Doctor.PatientFlow.ProfileActivity;
 
 import java.util.ArrayList;
 

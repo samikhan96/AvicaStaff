@@ -11,18 +11,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.optimum.AvicaStaff.R;
-import com.optimum.AvicaStaff.UI.Doctor.BloodGlucose.BloodGlucoseActivity;
-import com.optimum.AvicaStaff.UI.Doctor.BloodPressure.BloodPressureActivity;
-import com.optimum.AvicaStaff.UI.Doctor.Ecg.EcgActivity;
-import com.optimum.AvicaStaff.UI.Doctor.Respiratory.RespiratoryActivity;
-import com.optimum.AvicaStaff.UI.Doctor.Spo2.Spo2Activity;
-import com.optimum.AvicaStaff.UI.Doctor.Temperature.TemperatureActivity;
+import com.optimum.AvicaStaff.UI.Doctor.PatientFlow.PatientListActivity;
 
 public class RAGActivity extends AppCompatActivity {
 
 
     LinearLayout l1,  l3;
     ImageView item_1,item_2,item_3,item_4,item_5,item_6;
+
+    public static String RAG_type;
 
 
     @Override
@@ -59,6 +56,7 @@ public class RAGActivity extends AppCompatActivity {
         item_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                RAG_type="";
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }
         });
@@ -66,6 +64,7 @@ public class RAGActivity extends AppCompatActivity {
         item_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                RAG_type="ECG";
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }
         });
@@ -73,6 +72,7 @@ public class RAGActivity extends AppCompatActivity {
         item_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                RAG_type="SPO2";
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }
         });
@@ -80,6 +80,8 @@ public class RAGActivity extends AppCompatActivity {
         item_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                RAG_type="BLOODPRESSURE";
+
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }
         });
@@ -87,6 +89,8 @@ public class RAGActivity extends AppCompatActivity {
         item_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                RAG_type="BLOODGLUCOSE";
+
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }
         });
@@ -94,6 +98,8 @@ public class RAGActivity extends AppCompatActivity {
         item_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                RAG_type="TEMPERATURE";
+
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }
         });

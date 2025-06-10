@@ -1,4 +1,4 @@
-package com.optimum.AvicaStaff.UI.Doctor;
+package com.optimum.AvicaStaff.UI.Doctor.PatientFlow;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,14 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.optimum.AvicaStaff.Adapters.AdapterMedication;
 import com.optimum.AvicaStaff.Adapters.AdapterPatientList;
 import com.optimum.AvicaStaff.HttpUtils.AppServices;
 import com.optimum.AvicaStaff.Listener.ServiceListener;
-import com.optimum.AvicaStaff.Models.Medication;
 import com.optimum.AvicaStaff.Models.PatientList;
-import com.optimum.AvicaStaff.Models.User;
 import com.optimum.AvicaStaff.R;
+import com.optimum.AvicaStaff.UI.Doctor.DashboardActivity;
+import com.optimum.AvicaStaff.UI.Doctor.RAGActivity;
 import com.optimum.AvicaStaff.Utils.AppUtils;
 
 import java.util.ArrayList;

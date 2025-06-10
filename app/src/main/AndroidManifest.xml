@@ -46,7 +46,7 @@
             android:name="com.optimum.AvicaStaff.UI.Doctor.NotificationActivity"
             android:exported="false" />
         <activity
-            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientListActivity"
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.PatientListActivity"
             android:exported="false" />
         <activity
             android:name="com.optimum.AvicaStaff.UI.Doctor.BloodGlucose.WatchTutorialActivity"
@@ -152,8 +152,37 @@
             android:name="com.optimum.AvicaStaff.UI.Doctor.MeasurmentsActivity"
             android:exported="false" />
         <activity
-            android:name="com.optimum.AvicaStaff.UI.Doctor.ProfileActivity"
+            android:name="com.optimum.AvicaStaff.UI.Doctor.AddMeasurmentActivity"
             android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.ProfileActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.AddContactActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.AddNurseActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.AddTelemedicineActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.AssignDoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.ContactsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.DoctorsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.NurseActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.TelemedicineActivity"
+            android:exported="false" />
+
         <activity
             android:name="com.optimum.AvicaStaff.UI.Doctor.DocProfileActivity"
             android:exported="false" />
