@@ -33,6 +33,7 @@ public class PinActivity extends AppCompatActivity {
         loginBtn=findViewById(R.id.loginBtn);
         pinView=findViewById(R.id.pinview);
         password=findViewById(R.id.password);
+        password.setText("doc@123");
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
