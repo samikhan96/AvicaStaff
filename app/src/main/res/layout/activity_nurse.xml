@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:padding="@dimen/_10sdp"
-            android:text="Nurse"
+            android:text="Nurses"
             android:textColor="@color/black"
             android:textSize="@dimen/_16ssp"
             android:textStyle="bold" />
@@ -45,6 +45,7 @@
     </RelativeLayout>
 
     <HorizontalScrollView
+        android:layout_weight="1"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,9 +96,20 @@
                             android:layout_centerInParent="true"
                             android:layout_weight="1"
                             android:padding="@dimen/_5sdp"
+                            android:text="Department"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_weight="1"
+                            android:padding="@dimen/_5sdp"
                             android:text="Email"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12ssp" />
+
 
                         <TextView
                             android:layout_width="0dp"
@@ -110,25 +122,6 @@
                             android:textSize="@dimen/_12ssp" />
 
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:layout_weight="1"
-                            android:padding="@dimen/_5sdp"
-                            android:text="Relationship"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_12ssp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:layout_weight="1"
-                            android:padding="@dimen/_5sdp"
-                            android:text="Action"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_12ssp" />
 
                     </LinearLayout>
 
@@ -142,7 +135,7 @@
                             android:nestedScrollingEnabled="false"
                             android:id="@+id/list1"
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/_230sdp"
+                            android:layout_height="wrap_content"
                             tools:listitem="@layout/medication_item" />
                     </LinearLayout>
 
@@ -152,5 +145,19 @@
 
         </LinearLayout>
     </HorizontalScrollView>
+
+    <Button
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/btn_bg"
+        android:text="Add Contacts"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_14ssp" />
 
 </LinearLayout>

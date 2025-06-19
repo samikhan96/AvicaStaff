@@ -68,26 +68,30 @@ public class ProfileActivity extends AppCompatActivity {
         item_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(ProfileActivity.this, ContactsActivity.class));
+                finish();
             }
         });
 
         item_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(ProfileActivity.this, DoctorsActivity.class));
+                finish();
             }
         });
         item_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(ProfileActivity.this, TelemedicineActivity.class));
+                finish();
             }
         });
         item_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(ProfileActivity.this, AddNurseActivity.class));
+                finish();
             }
         });
         item_5.setOnClickListener(new View.OnClickListener() {
@@ -101,20 +105,23 @@ public class ProfileActivity extends AppCompatActivity {
         item_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(ProfileActivity.this, MedicationsActivity.class));
+                finish();
             }
         });
         item_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(ProfileActivity.this, AlertsActivity.class));
+                finish();
             }
         });
 
         item_8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(ProfileActivity.this, PHRActivity.class));
+                finish();
             }
         });
 
