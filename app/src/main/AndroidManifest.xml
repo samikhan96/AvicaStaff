@@ -184,6 +184,15 @@
             android:exported="false" />
 
         <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.PHRActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.MedicationsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.AlertsActivity"
+            android:exported="false" />
+        <activity
             android:name="com.optimum.AvicaStaff.UI.Doctor.DocProfileActivity"
             android:exported="false" />
         <activity

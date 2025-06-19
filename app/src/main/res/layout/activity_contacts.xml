@@ -45,6 +45,7 @@
     </RelativeLayout>
 
     <HorizontalScrollView
+        android:layout_weight="1"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -142,7 +143,7 @@
                             android:nestedScrollingEnabled="false"
                             android:id="@+id/list1"
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/_230sdp"
+                            android:layout_height="wrap_content"
                             tools:listitem="@layout/medication_item" />
                     </LinearLayout>
 
@@ -152,5 +153,19 @@
 
         </LinearLayout>
     </HorizontalScrollView>
+
+    <Button
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+         android:layout_marginBottom="@dimen/_10sdp"
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/btn_bg"
+        android:text="Add Contacts"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_14ssp" />
 
 </LinearLayout>

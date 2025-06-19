@@ -86,7 +86,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:background="@null"
-                android:hint="123"
+                android:hint="Enter Contact Name"
                 android:paddingLeft="@dimen/_10sdp"
                 android:textSize="@dimen/_10ssp" />
 
@@ -126,7 +126,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:background="@null"
-                android:hint="123"
+                android:hint="Enter Contact Email"
                 android:paddingLeft="@dimen/_10sdp"
                 android:textSize="@dimen/_10ssp" />
 
@@ -166,7 +166,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:background="@null"
-                android:hint="123"
+                android:hint="Enter Contact Phone"
                 android:paddingLeft="@dimen/_10sdp"
                 android:textSize="@dimen/_10ssp" />
 
@@ -196,7 +196,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:padding="@dimen/_7sdp"
-                android:src="@drawable/heartbeat" />
+                android:src="@drawable/relationship" />
 
             <EditText
                 android:inputType="textCapSentences"
@@ -205,7 +205,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:background="@null"
-                android:hint="123"
+                android:hint="Select Contact Relationship"
                 android:paddingLeft="@dimen/_10sdp"
                 android:textSize="@dimen/_10ssp" />
 
@@ -218,7 +218,7 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_30sdp"
             android:background="@drawable/btn_bg"
-            android:text="Send"
+            android:text="Save"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_14ssp" />
