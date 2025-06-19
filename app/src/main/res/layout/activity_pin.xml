@@ -121,7 +121,6 @@
                     app:passwordToggleEnabled="true">
 
                     <EditText
-                        android:text="abc123"
                         android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

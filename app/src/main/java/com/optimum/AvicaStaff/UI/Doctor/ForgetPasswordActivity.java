@@ -35,7 +35,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
         loginBtn=findViewById(R.id.loginBtn);
         et_email=findViewById(R.id.et_email);
-        et_email.setText("muhammadsaqib@avica.com");
+//        et_email.setText("muhammadsaqib@avica.com");
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

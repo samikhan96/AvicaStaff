@@ -69,6 +69,17 @@
             android:text="1 piece/day"
             android:textColor="@color/menu_icon"
             android:textSize="@dimen/_10ssp" />
+        <TextView
+            android:id="@+id/tv_6"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:padding="@dimen/_5sdp"
+            android:text="1 piece/day"
+            android:textColor="@color/menu_icon"
+            android:textSize="@dimen/_10ssp" />
 
     </LinearLayout>
 

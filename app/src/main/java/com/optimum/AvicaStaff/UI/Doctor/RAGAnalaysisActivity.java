@@ -3,6 +3,7 @@ package com.optimum.AvicaStaff.UI.Doctor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,12 +36,28 @@ public class RAGAnalaysisActivity extends AppCompatActivity {
 
 
         ImageView back = findViewById(R.id.back);
+        TextView type = findViewById(R.id.type);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+        if (RAGActivity.RAG_type.equalsIgnoreCase("ECG")){
+            type.setText("ECG");
+        }
+        if (RAGActivity.RAG_type.equalsIgnoreCase("spo2")){
+            type.setText("Spo2");
+        }
+        if (RAGActivity.RAG_type.equalsIgnoreCase("BLOODPRESSURE")){
+            type.setText("Blood Presure");
+        }
+        if (RAGActivity.RAG_type.equalsIgnoreCase("BLOODGLUCOSE")){
+            type.setText("Blood Glucose");
+        }
+        if (RAGActivity.RAG_type.equalsIgnoreCase("TEMPERATURE")){
+            type.setText("Temperature");
+        }
 
         getRAG();
     }

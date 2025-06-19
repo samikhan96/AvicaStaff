@@ -56,7 +56,7 @@ public class RAGActivity extends AppCompatActivity {
         item_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RAG_type="";
+                RAG_type="?limit=10";
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }
         });
@@ -64,7 +64,7 @@ public class RAGActivity extends AppCompatActivity {
         item_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RAG_type="ECG";
+                RAG_type="?type=ECG";
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }
         });
@@ -72,7 +72,7 @@ public class RAGActivity extends AppCompatActivity {
         item_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RAG_type="SPO2";
+                RAG_type="?type=SPO2";
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }
         });
@@ -80,7 +80,7 @@ public class RAGActivity extends AppCompatActivity {
         item_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RAG_type="BLOODPRESSURE";
+                RAG_type="?type=BLOODPRESSURE";
 
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }
@@ -89,7 +89,7 @@ public class RAGActivity extends AppCompatActivity {
         item_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RAG_type="BLOODGLUCOSE";
+                RAG_type="?type=BLOODGLUCOSE";
 
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }
@@ -98,7 +98,7 @@ public class RAGActivity extends AppCompatActivity {
         item_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RAG_type="TEMPERATURE";
+                RAG_type="?type=TEMPERATURE";
 
                 startActivity(new Intent(RAGActivity.this, RAGAnalaysisActivity.class));
             }

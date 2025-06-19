@@ -44,6 +44,7 @@ public class AdapterRag_analaysis extends RecyclerView.Adapter<AdapterRag_analay
         holder.tv_3.setText(pamModel.unit);
         holder.tv_4.setText(pamModel.type);
         holder.tv_5.setText(pamModel.status);
+        holder.tv_6.setText(pamModel.type);
 //        AppUtils.setFormattedDate(pamModel.created_at,holder.tv_5);
 
 
@@ -57,7 +58,7 @@ public class AdapterRag_analaysis extends RecyclerView.Adapter<AdapterRag_analay
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView tv_1,tv_2,tv_3,tv_4,tv_5;
+        private TextView tv_1,tv_2,tv_3,tv_4,tv_5,tv_6;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -66,6 +67,7 @@ public class AdapterRag_analaysis extends RecyclerView.Adapter<AdapterRag_analay
             tv_3 =  itemView.findViewById(R.id.tv_3);
             tv_4 =  itemView.findViewById(R.id.tv_4);
             tv_5 =  itemView.findViewById(R.id.tv_5);
+            tv_6 =  itemView.findViewById(R.id.tv_6);
 
         }
 
