@@ -3,6 +3,7 @@ package com.optimum.AvicaStaff.HttpUtils;
 
 import com.android.volley.VolleyError;
 import com.optimum.AvicaStaff.Listener.ServiceListener;
+import com.optimum.AvicaStaff.Models.AppointmentData;
 import com.optimum.AvicaStaff.Models.DashboardData;
 import com.optimum.AvicaStaff.Models.DoctorProfile.ProfileData;
 import com.optimum.AvicaStaff.Models.Education;
@@ -304,6 +305,25 @@ public class AppServices {
             }
         });
 
+    }
+
+    public static void gettelemedappointments(String TAG,  final ServiceListener<AppointmentData, String> listener) {
+        RestAPI.GetUrlEncodedRequest(TAG, ConfigConstants.gettelemedappointments , new ServiceListener<JSONObject, VolleyError>() {
+            @Override
+            public void success(JSONObject success) {
+                try {
+                    AppointmentData dashboardData = GsonUtils.fromJSON(success.getJSONObject("data"), AppointmentData.class);
+                    listener.success(dashboardData);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void error(VolleyError error) {
+                listener.error(error.getMessage());
+            }
+        });
     }
 
 

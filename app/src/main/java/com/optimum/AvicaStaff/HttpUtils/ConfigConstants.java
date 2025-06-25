@@ -19,5 +19,6 @@ public class ConfigConstants {
     public static final String AddMeasurment = "/users/single-value-measurement/";
     public static final String getPatientList = "/web/organization/patients";
     public static final String getRAG = "/app/measurements/rag";
+    public static final String gettelemedappointments = "/app/telemed/appointments";
 
 }
