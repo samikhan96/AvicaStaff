@@ -30,6 +30,7 @@ import com.optimum.AvicaStaff.Models.Dashboard_Spo2;
 import com.optimum.AvicaStaff.Models.Dashboard_Temp;
 import com.optimum.AvicaStaff.Models.User;
 import com.optimum.AvicaStaff.R;
+import com.optimum.AvicaStaff.UI.Doctor.Chat.ChatActivity;
 import com.optimum.AvicaStaff.UI.Doctor.PatientFlow.PatientListActivity;
 import com.optimum.AvicaStaff.UI.Doctor.TeleMedicine.TelemedActivity;
 import com.optimum.AvicaStaff.UI.Doctor.Dialogs.LogoutDialog;
@@ -51,7 +52,7 @@ public class DashboardActivity extends AppCompatActivity {
             Temp_totalReading, Temp_timeStamp, Temp_tv_1, Temp_tv_2, Temp_tv_3,
             spo2_totalReading, spo2_timeStamp, spo2_tv_1, spo2_tv_2, spo2_tv_3,
             ecg_totalReading, ecg_timeStamp, ecg_tv_1, ecg_tv_2, ecg_tv_3;
-    LinearLayout l2,  l3;
+    LinearLayout l2, l3;
     User user;
     DonutChartView bg_donutChart, bp_donutChart, Temp_donutChart, spo2_donutChart, ecg_donutChart;
     Dashboard_BG dashboardBg;
@@ -193,13 +194,14 @@ public class DashboardActivity extends AppCompatActivity {
                     case R.id.item2:
                         //close drawer
                         drawerLayout.closeDrawer(GravityCompat.START);
-                            intent = new Intent(DashboardActivity.this, DocProfileActivity.class);
+                        intent = new Intent(DashboardActivity.this, DocProfileActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.item3:
                         //close drawer
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        AppUtils.Toast("Coming Soon");
+                        intent = new Intent(DashboardActivity.this, ChatActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.item4:
                         //close drawer

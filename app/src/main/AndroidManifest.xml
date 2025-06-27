@@ -214,6 +214,12 @@
             android:name="com.optimum.AvicaStaff.UI.Doctor.LoginActivity"
             android:exported="false" />
         <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Chat.ChatDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.Chat.ChatActivity"
+            android:exported="false" />
+        <activity
             android:name="com.optimum.AvicaStaff.UI.Doctor.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

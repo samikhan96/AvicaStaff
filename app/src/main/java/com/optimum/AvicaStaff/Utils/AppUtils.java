@@ -25,6 +25,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.TimeZone;
 
 public class AppUtils {
    public static ProgressDialog progressDialog;
@@ -155,4 +156,18 @@ public class AppUtils {
         }
     }
 
+    public static void setFormattedTime(String isoDate, TextView textView) {
+        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault());
+        inputFormat.setTimeZone(TimeZone.getTimeZone("UTC")); // Ensure correct parsing of Zulu time
+
+        SimpleDateFormat outputFormat = new SimpleDateFormat("hh:mm a", Locale.getDefault()); // Only time
+        try {
+            Date date = inputFormat.parse(isoDate);
+            String timeFormatted = outputFormat.format(date);
+            textView.setText(timeFormatted);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            textView.setText("Invalid time");
+        }
+    }
 }

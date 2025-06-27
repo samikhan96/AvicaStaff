@@ -2,6 +2,8 @@ package com.optimum.AvicaStaff.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import com.optimum.AvicaStaff.R;
 import com.optimum.AvicaStaff.Utils.AppUtils;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class AdapterRag_analaysis extends RecyclerView.Adapter<AdapterRag_analaysis.MyViewHolder> {
 
@@ -46,6 +49,27 @@ public class AdapterRag_analaysis extends RecyclerView.Adapter<AdapterRag_analay
         holder.tv_5.setText(pamModel.status);
         holder.tv_6.setText(pamModel.type);
 //        AppUtils.setFormattedDate(pamModel.created_at,holder.tv_5);
+
+        GradientDrawable bgDrawable = (GradientDrawable) holder.tv_5.getBackground();
+
+        switch (pamModel.status.toLowerCase(Locale.ROOT)) {
+            case "high":
+                holder.tv_5.setText("High");
+                bgDrawable.setColor(Color.parseColor("#2CC97D")); // Green
+                break;
+            case "normal":
+                holder.tv_5.setText("Normal");
+                bgDrawable.setColor(Color.parseColor("#F7B500")); // Orange
+                break;
+            case "low":
+                holder.tv_5.setText("Low");
+                bgDrawable.setColor(Color.parseColor("#EF5DA8")); // Pink
+                break;
+            default:
+                holder.tv_5.setText(pamModel.status);
+                bgDrawable.setColor(Color.GRAY); // Default/Fallback
+                break;
+        }
 
 
 
