@@ -24,12 +24,21 @@ public class MeasurmentsActivity extends AppCompatActivity {
 
     ImageView item_1,item_2,item_3,item_4,item_5,item_6;
     Button loginBtn;
+    public static String Patient_id;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_measurments);
+        Patient_id = getIntent().getStringExtra("patient_data");
+        ImageView back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
         item_1 = findViewById(R.id.item_1);
@@ -39,6 +48,7 @@ public class MeasurmentsActivity extends AppCompatActivity {
         item_5 = findViewById(R.id.item_5);
         item_6 = findViewById(R.id.item_6);
         loginBtn = findViewById(R.id.loginBtn);
+        loginBtn.setVisibility(View.GONE);
 
 
 
@@ -94,23 +104,4 @@ public class MeasurmentsActivity extends AppCompatActivity {
 
     }
 
-    public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Are you sure you want to exit?")
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        finishAffinity();
-                        System.exit(0);
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = builder.create();
-        alert.show();
-
-    }
 }

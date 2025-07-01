@@ -217,21 +217,15 @@ public class DashboardActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
-                    case R.id.item6:
-                        //close drawer
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        intent = new Intent(DashboardActivity.this, MedicationActivity.class);
-                        startActivity(intent);
-                        break;
 
-                    case R.id.item7:
+                    case R.id.item6:
                         //close drawer
                         drawerLayout.closeDrawer(GravityCompat.START);
                         intent = new Intent(DashboardActivity.this, ComplianceActivity.class);
                         startActivity(intent);
                         break;
 
-                    case R.id.item8:
+                    case R.id.item7:
                         //close drawer
                         drawerLayout.closeDrawer(GravityCompat.START);
                         intent = new Intent(DashboardActivity.this, RAGActivity.class);
@@ -247,80 +241,90 @@ public class DashboardActivity extends AppCompatActivity {
         getDocDashboard();
     }
 
-    private void setupBgPieChart(int high, int normal, int low) {
-        int total = high + normal + low;
+
+    private void setupBgPieChart(int high, int normal, int low,int pending) {
+        int total = high + normal + low + pending;
 
         bg_totalReading.setText("" + total);
         // Example values
-        int[] values = {high, normal, low};
+        int[] values = {high, normal, low, pending};
         int[] colors = {
                 0xFF2CC97D,
                 0xFFF7B500,
-                0xFFEF5DA8
+                0xFFEF5DA8,
+                0xFF0B75F9
         };
         bg_donutChart.setValues(values);
         bg_donutChart.setColors(colors);
 
     }
 
-    private void setupBpPieChart(int high, int normal, int low) {
-        int total = high + normal + low;
+    private void setupBpPieChart(int high, int normal, int low,int pending) {
+        int total = high + normal + low + pending;
 
         bp_totalReading.setText("" + total);
         // Example values
-        int[] values = {high, normal, low};
+        int[] values = {high, normal, low,pending};
         int[] colors = {
                 0xFF2CC97D,
                 0xFFF7B500,
-                0xFFEF5DA8
+                0xFFEF5DA8,
+                0xFF0B75F9
+
         };
         bp_donutChart.setValues(values);
         bp_donutChart.setColors(colors);
 
     }
 
-    private void setupTempPieChart(int high, int normal, int low) {
-        int total = high + normal + low;
+    private void setupTempPieChart(int high, int normal, int low,int pending) {
+        int total = high + normal + low + pending;
 
         Temp_totalReading.setText("" + total);
         // Example values
-        int[] values = {high, normal, low};
+        int[] values = {high, normal, low,pending};
         int[] colors = {
                 0xFF2CC97D,
                 0xFFF7B500,
-                0xFFEF5DA8
+                0xFFEF5DA8,
+                0xFF0B75F9
+
         };
         Temp_donutChart.setValues(values);
         Temp_donutChart.setColors(colors);
 
     }
 
-    private void setupspo2PieChart(int high, int normal, int low) {
-        int total = high + normal + low;
+    private void setupspo2PieChart(int high, int normal, int low,int pending) {
+        int total = high + normal + low + pending;
 
         spo2_totalReading.setText("" + total);
         // Example values
-        int[] values = {high, normal, low};
+        int[] values = {high, normal, low,pending};
         int[] colors = {
                 0xFF2CC97D,
                 0xFFF7B500,
-                0xFFEF5DA8
+                0xFFEF5DA8,
+                0xFF0B75F9
+
         };
         spo2_donutChart.setValues(values);
         spo2_donutChart.setColors(colors);
 
     }
 
-    private void setupecgPieChart(int high, int normal, int low) {
-        int total = high + normal + low;
+    private void setupecgPieChart(int high, int normal, int low,int pending) {
+        int total = high + normal + low + pending;
 
         ecg_totalReading.setText("" + total);
         // Example values
-        int[] values = {high, normal, low};
+        int[] values = {high, normal, low,pending};
         int[] colors = {
                 0xFF2CC97D,
                 0xFFF7B500,
-                0xFFEF5DA8
+                0xFFEF5DA8,
+                0xFF0B75F9
+
         };
         ecg_donutChart.setValues(values);
         ecg_donutChart.setColors(colors);
@@ -377,43 +381,43 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     public void setBGdata() {
-        bg_tv_1.setText("• High: 235 mmdb " + "(" + dashboardBg.high + ")");
-        bg_tv_2.setText("• Normal: 120 mmdb " + "(" + dashboardBg.normal + ")");
-        bg_tv_3.setText("• Low: 80 mmdb " + "(" + dashboardBg.low + ")");
+        bg_tv_1.setText("• High:   " + "(" + dashboardBg.high + ")");
+        bg_tv_2.setText("• Normal:   " + "(" + dashboardBg.normal + ")");
+        bg_tv_3.setText("• Low:   " + "(" + dashboardBg.low + ")");
         bg_timeStamp.setText("6 pm 12-06-20");
-        setupBgPieChart(dashboardBg.high, dashboardBg.normal, dashboardBg.low);
+        setupBgPieChart(dashboardBg.high, dashboardBg.normal, dashboardBg.low,dashboardBg.alert_not_set);
     }
 
     public void setBPdata() {
-        bp_tv_1.setText("• High: 235 mmdb " + "(" + dashboardBp.high + ")");
-        bp_tv_2.setText("• Normal: 120 mmdb " + "(" + dashboardBp.normal + ")");
-        bp_tv_3.setText("• Low: 80 mmdb " + "(" + dashboardBp.low + ")");
+        bp_tv_1.setText("• High:   " + "(" + dashboardBp.high + ")");
+        bp_tv_2.setText("• Normal:   " + "(" + dashboardBp.normal + ")");
+        bp_tv_3.setText("• Low:   " + "(" + dashboardBp.low + ")");
         bp_timeStamp.setText("6 pm 12-06-20");
-        setupBpPieChart(dashboardBp.high, dashboardBp.normal, dashboardBp.low);
+        setupBpPieChart(dashboardBp.high, dashboardBp.normal, dashboardBp.low,dashboardBp.alert_not_set);
     }
 
     public void setTempdata() {
-        Temp_tv_1.setText("• High: 235 mmdb " + "(" + dashboardTemp.high + ")");
-        Temp_tv_2.setText("• Normal: 120 mmdb " + "(" + dashboardTemp.normal + ")");
-        Temp_tv_3.setText("• Low: 80 mmdb " + "(" + dashboardTemp.low + ")");
+        Temp_tv_1.setText("• High:   " + "(" + dashboardTemp.high + ")");
+        Temp_tv_2.setText("• Normal:   " + "(" + dashboardTemp.normal + ")");
+        Temp_tv_3.setText("• Low:   " + "(" + dashboardTemp.low + ")");
         Temp_timeStamp.setText("6 pm 12-06-20");
-        setupTempPieChart(dashboardTemp.high, dashboardTemp.normal, dashboardTemp.low);
+        setupTempPieChart(dashboardTemp.high, dashboardTemp.normal, dashboardTemp.low,dashboardTemp.alert_not_set);
     }
 
     public void setspo2data() {
-        spo2_tv_1.setText("• High: 235 mmdb " + "(" + dashboardspo2.high + ")");
-        spo2_tv_2.setText("• Normal: 120 mmdb " + "(" + dashboardspo2.normal + ")");
-        spo2_tv_3.setText("• Low: 80 mmdb " + "(" + dashboardspo2.low + ")");
+        spo2_tv_1.setText("• High:   " + "(" + dashboardspo2.high + ")");
+        spo2_tv_2.setText("• Normal:   " + "(" + dashboardspo2.normal + ")");
+        spo2_tv_3.setText("• Low:   " + "(" + dashboardspo2.low + ")");
         spo2_timeStamp.setText("6 pm 12-06-20");
-        setupspo2PieChart(dashboardspo2.high, dashboardspo2.normal, dashboardspo2.low);
+        setupspo2PieChart(dashboardspo2.high, dashboardspo2.normal, dashboardspo2.low,dashboardspo2.alert_not_set);
     }
 
     public void setecgdata() {
-        ecg_tv_1.setText("• High: 235 mmdb " + "(" + dashboardECG.high + ")");
-        ecg_tv_2.setText("• Normal: 120 mmdb " + "(" + dashboardECG.normal + ")");
-        ecg_tv_3.setText("• Low: 80 mmdb " + "(" + dashboardECG.low + ")");
+        ecg_tv_1.setText("• High:   " + "(" + dashboardECG.high + ")");
+        ecg_tv_2.setText("• Normal:   " + "(" + dashboardECG.normal + ")");
+        ecg_tv_3.setText("• Low:   " + "(" + dashboardECG.low + ")");
         ecg_timeStamp.setText("6 pm 12-06-20");
-        setupecgPieChart(dashboardECG.high, dashboardECG.normal, dashboardECG.low);
+        setupecgPieChart(dashboardECG.high, dashboardECG.normal, dashboardECG.low,dashboardECG.alert_not_set);
     }
 
 }

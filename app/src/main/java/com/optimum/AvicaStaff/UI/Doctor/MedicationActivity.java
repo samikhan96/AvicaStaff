@@ -25,13 +25,12 @@ public class MedicationActivity extends AppCompatActivity {
     RecyclerView list1;
     ArrayList<Medication> medicationArrayList = new ArrayList<>();
     AdapterMedication adapterMedication;
-    User user;
+    String Patient_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medication);
-        user = UserPrefs.getGetUser();
         ImageView back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,13 +39,16 @@ public class MedicationActivity extends AppCompatActivity {
             }
         });
         list1=findViewById(R.id.list1);
+
+        Patient_id = getIntent().getStringExtra("patient_data");
+
         getMedication();
 
     }
     public void getMedication(){
         AppUtils.showProgressDialog(MedicationActivity.this);
 
-        AppServices.getMedication(MedicationActivity.class.getSimpleName(), user.id,new ServiceListener<ArrayList<Medication>, String>() {
+        AppServices.getMedication(MedicationActivity.class.getSimpleName(), Patient_id,new ServiceListener<ArrayList<Medication>, String>() {
             @Override
             public void success(ArrayList<Medication> success) {
                 AppUtils.dismisProgressDialog(MedicationActivity.this);

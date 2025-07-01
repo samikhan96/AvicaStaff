@@ -1,9 +1,12 @@
 package com.optimum.AvicaStaff.HttpUtils;
 
 
+import com.android.volley.NetworkResponse;
+import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.optimum.AvicaStaff.Listener.ServiceListener;
 import com.optimum.AvicaStaff.Models.AppointmentData;
+import com.optimum.AvicaStaff.Models.Chat.ChatRoom;
 import com.optimum.AvicaStaff.Models.DashboardData;
 import com.optimum.AvicaStaff.Models.DoctorProfile.ProfileData;
 import com.optimum.AvicaStaff.Models.Education;
@@ -13,12 +16,14 @@ import com.optimum.AvicaStaff.Models.PatientList;
 import com.optimum.AvicaStaff.Models.PatientProfile;
 import com.optimum.AvicaStaff.Models.RAG;
 import com.optimum.AvicaStaff.Models.Reports;
+import com.optimum.AvicaStaff.Models.Tutorials;
 import com.optimum.AvicaStaff.Models.User;
 import com.optimum.AvicaStaff.Utils.UserPrefs;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -313,6 +318,94 @@ public class AppServices {
             public void success(JSONObject success) {
                 try {
                     AppointmentData dashboardData = GsonUtils.fromJSON(success.getJSONObject("data"), AppointmentData.class);
+                    listener.success(dashboardData);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void error(VolleyError error) {
+                listener.error(error.getMessage());
+            }
+        });
+    }
+
+    public static void createOrSelectChatRoom(String TAG, JSONObject userObject, final ServiceListener<ChatRoom, String> listener) {
+        RestAPI.PostJsonRequest(TAG, ConfigConstants.createOrSelectChatRoom, userObject, new ServiceListener<JSONObject, VolleyError>() {
+            @Override
+            public void success(JSONObject success) {
+                try {
+                    if (success.getBoolean("success")) {
+                        ChatRoom user = GsonUtils.fromJSON(success.getJSONObject("data"), ChatRoom.class);
+                        listener.success(user);
+                    } else listener.error(success.getJSONObject("data").getString("message"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void error(VolleyError error) {
+                listener.error(error.getMessage());
+            }
+        });
+
+    }
+
+
+    public static void UploadFileRequest(String TAG, String apiEndpoint, File file,
+                                         final ServiceListener<NetworkResponse, VolleyError> listener) {
+
+        MultipartRequest multipartRequest = new MultipartRequest(
+                ConfigConstants.API_BASE_URL + apiEndpoint,
+                file,
+                "file", // <- This must match server-side form field key
+                new Response.Listener<NetworkResponse>() {
+                    @Override
+                    public void onResponse(NetworkResponse response) {
+                        listener.success(response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        listener.error(error);
+                    }
+                }
+        );
+
+        HttpRequestHandler.getInstance().addToRequestQueue(multipartRequest, TAG);
+    }
+
+    public static void Createeducation(String TAG, JSONObject userObject, final ServiceListener<String, String> listener) {
+        RestAPI.PostJsonRequest(TAG, ConfigConstants.Createeducation, userObject, new ServiceListener<JSONObject, VolleyError>() {
+            @Override
+            public void success(JSONObject success) {
+                try {
+                    if (success.getBoolean("success")) {
+                        listener.success(success.getJSONObject("data").toString());
+                    } else listener.error(success.getJSONObject("data").toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void error(VolleyError error) {
+                listener.error(error.getMessage());
+            }
+        });
+
+    }
+
+
+    public static void getTutorials(String TAG,String category,  final ServiceListener<Tutorials, String> listener) {
+        RestAPI.GetUrlEncodedRequest(TAG, ConfigConstants.getTutorials+"?category="+category, new ServiceListener<JSONObject, VolleyError>() {
+            @Override
+            public void success(JSONObject success) {
+                try {
+                    Tutorials dashboardData = GsonUtils.fromJSON(success.getJSONObject("data"), Tutorials.class);
                     listener.success(dashboardData);
                 } catch (JSONException e) {
                     e.printStackTrace();

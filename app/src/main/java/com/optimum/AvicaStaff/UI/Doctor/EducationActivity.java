@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,9 +20,10 @@ import java.util.ArrayList;
 
 public class EducationActivity extends AppCompatActivity {
 
-    RecyclerView list1,list2;
+    RecyclerView list1;
     ArrayList<Education> educationArrayList = new ArrayList<>();
     AdapterEducation adapterEducation;
+    ImageView upload_article;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +31,22 @@ public class EducationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_education);
 
         ImageView back = findViewById(R.id.back);
+        upload_article  = findViewById(R.id.upload_article);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+        upload_article.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(EducationActivity.this, AddEducationActivity.class));
+                finish();
+            }
+        });
 
         list1=findViewById(R.id.list1);
-        list2=findViewById(R.id.list2);
 
 
         getEducation();

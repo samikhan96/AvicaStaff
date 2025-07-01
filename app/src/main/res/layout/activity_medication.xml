@@ -44,6 +44,12 @@
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/_10sdp">
+
     <HorizontalScrollView
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_width="match_parent"
@@ -129,6 +135,15 @@
                     android:text="End"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Time"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
 
             </LinearLayout>
 
@@ -142,7 +157,7 @@
                     android:nestedScrollingEnabled="false"
                     android:id="@+id/list1"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_230sdp"
+                    android:layout_height="wrap_content"
                     tools:listitem="@layout/medication_item" />
             </LinearLayout>
 
@@ -153,4 +168,5 @@
         </LinearLayout>
     </HorizontalScrollView>
 
+    </LinearLayout>
 </LinearLayout>

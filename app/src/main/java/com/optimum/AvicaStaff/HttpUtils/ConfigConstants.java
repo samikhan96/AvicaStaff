@@ -20,5 +20,11 @@ public class ConfigConstants {
     public static final String getPatientList = "/web/organization/patients";
     public static final String getRAG = "/app/measurements/rag";
     public static final String gettelemedappointments = "/app/telemed/appointments";
+    public static final String createOrSelectChatRoom = "/web/chat/room";
+
+    public static final String uploader = "/web/uploader";
+    public static final String Createeducation = "/web/education";
+    public static final String getTutorials = "/web/videos";
+
 
 }

@@ -122,6 +122,9 @@
             android:name="com.optimum.AvicaStaff.UI.Doctor.EducationActivity"
             android:exported="false" />
         <activity
+            android:name="com.optimum.AvicaStaff.UI.Doctor.AddEducationActivity"
+            android:exported="false" />
+        <activity
             android:name="com.optimum.AvicaStaff.UI.Doctor.ReportActivity"
             android:exported="false" />
         <activity

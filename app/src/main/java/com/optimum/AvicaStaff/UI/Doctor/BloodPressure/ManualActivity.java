@@ -16,6 +16,7 @@ import com.optimum.AvicaStaff.Listener.ServiceListener;
 import com.optimum.AvicaStaff.Models.User;
 import com.optimum.AvicaStaff.R;
 import com.optimum.AvicaStaff.UI.Doctor.Dialogs.Measurement_TakenDialog;
+import com.optimum.AvicaStaff.UI.Doctor.MeasurmentsActivity;
 import com.optimum.AvicaStaff.Utils.AppUtils;
 import com.optimum.AvicaStaff.Utils.UserPrefs;
 
@@ -87,7 +88,7 @@ public class ManualActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        AppServices.AddMeasurment(ManualActivity.class.getSimpleName(),user.id, jsonObject, new ServiceListener<String, String>() {
+        AppServices.AddMeasurment(ManualActivity.class.getSimpleName(), MeasurmentsActivity.Patient_id, jsonObject, new ServiceListener<String, String>() {
             @Override
             public void success(String success) {
                 AppUtils.dismisProgressDialog(ManualActivity.this);

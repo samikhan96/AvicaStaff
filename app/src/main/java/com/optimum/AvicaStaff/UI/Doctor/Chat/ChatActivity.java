@@ -20,6 +20,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.optimum.AvicaStaff.HttpUtils.AppServices;
+import com.optimum.AvicaStaff.Listener.ServiceListener;
 import com.optimum.AvicaStaff.Models.Chat.ChatRoom;
 import com.optimum.AvicaStaff.Models.Chat.SearchUserChat;
 import com.optimum.AvicaStaff.Models.User;
@@ -30,6 +32,8 @@ import com.optimum.AvicaStaff.Utils.AppUtils;
 import com.optimum.AvicaStaff.Utils.UserPrefs;
 import com.optimum.AvicaStaff.api.ApiService;
 import com.optimum.AvicaStaff.api.RetrofitClient;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -134,6 +138,18 @@ public class ChatActivity extends AppCompatActivity {
                 filterUsers(newText);
                 return false;
             }
+        });
+
+        LinearLayout searchContainer = findViewById(R.id.searchContainer);
+
+        // Show result box on any click inside the entire search container
+        searchContainer.setOnClickListener(v -> {
+            searchView.setIconified(false); // Expand SearchView
+            searchView.requestFocus(); // Focus the input field
+
+            // Show the results card
+            searchResultBox.setVisibility(View.VISIBLE);
+
         });
 
         // Make the search results box visible when the SearchView is tapped
@@ -303,20 +319,16 @@ public class ChatActivity extends AppCompatActivity {
             void bind(SearchUserChat.Chat_User user) {
                 messageRole.setText(user.getRole());
                 messageUsername.setText(user.getFirstName());
-                messageUserImage.setImageResource(R.drawable.user);
-
+                // Set Text Values+
+                RequestOptions options = new RequestOptions()
+                        .centerCrop()
+                        .placeholder(R.drawable.app_icon)
+                        .error(R.drawable.app_icon);
+                Glide.with(ChatActivity.this).load(user.getUri()).apply(options).into(messageUserImage);
                 // Set a click listener to open ChatDetailActivity with user info
                 itemView.setOnClickListener(v -> {
-                    Intent intent = new Intent(ChatActivity.this, ChatDetailActivity.class);
-                    intent.putExtra("FIRST_NAME", user.getFirstName());
-                    intent.putExtra("LAST_NAME", user.getLastName());
-                    intent.putExtra("MIDDLE_NAME", user.getMiddleName());
-                    intent.putExtra("USER_EMAIL", user.getEmail());
-                    intent.putExtra("USER_ID", user.getChatUserId());
-                    intent.putExtra("USER_Uri", user.getUri());
-                    intent.putExtra("USER_ROLE", user.getRole());
-                    intent.putExtra("USER_IMAGE", R.drawable.user);
-                    startActivity(intent);
+                    createOrSelectChatRoom(user.getChatUserId());
+                    searchResultBox.setVisibility(View.GONE);
                 });
             }
         }
@@ -343,4 +355,45 @@ public class ChatActivity extends AppCompatActivity {
     }
 
 
+    public void createOrSelectChatRoom(String userId) {
+        AppUtils.showProgressDialog(ChatActivity.this);
+
+        // Create the JSON object
+        JSONObject json = new JSONObject();
+        try {
+            json.put("user_id", userId);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        AppServices.createOrSelectChatRoom(ChatActivity.class.getSimpleName(), json, new ServiceListener<ChatRoom, String>() {
+            @Override
+            public void success(ChatRoom success) {
+                ChatRoom chatRoom;
+                chatRoom = success;
+                for (ChatRoom.User user : chatRoom.getUsers()) {
+                    Intent intent = new Intent(ChatActivity.this, ChatDetailActivity.class);
+                    // Pass user details to the next activity
+                    intent.putExtra("firstName", user.getFirstName());
+                    intent.putExtra("lastName", user.getLastName());
+                    intent.putExtra("middleName", user.getMiddleName());
+                    intent.putExtra("email", user.getEmail());
+                    intent.putExtra("role", user.getRole());
+                    intent.putExtra("uri", user.getUri());
+                    intent.putExtra("chatRoomId", chatRoom.getId()); // Also passing chat room ID
+                    intent.putExtra("id", user.getId()); // Also passing chat room ID
+                    startActivity(intent);
+                }
+                AppUtils.dismisProgressDialog(ChatActivity.this);
+
+            }
+
+            @Override
+            public void error(String error) {
+                AppUtils.dismisProgressDialog(ChatActivity.this);
+
+            }
+        });
+    }
 }
