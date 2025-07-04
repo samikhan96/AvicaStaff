@@ -116,7 +116,7 @@
             android:name="com.optimum.AvicaStaff.UI.Doctor.History.HistoryActivity"
             android:exported="false" />
         <activity
-            android:name="com.optimum.AvicaStaff.UI.Doctor.MedicationActivity"
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.MedicationReportActivity"
             android:exported="false" />
         <activity
             android:name="com.optimum.AvicaStaff.UI.Doctor.EducationActivity"
@@ -190,7 +190,7 @@
             android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.PHRActivity"
             android:exported="false" />
         <activity
-            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.MedicationsActivity"
+            android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.CreateMedicationActivity"
             android:exported="false" />
         <activity
             android:name="com.optimum.AvicaStaff.UI.Doctor.PatientFlow.AlertsActivity"
@@ -257,6 +257,13 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
+        <service
+            android:name=".Utils.MyFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
     </application>
 

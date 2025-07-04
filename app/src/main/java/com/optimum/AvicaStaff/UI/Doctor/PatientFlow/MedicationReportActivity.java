@@ -1,25 +1,25 @@
-package com.optimum.AvicaStaff.UI.Doctor;
+package com.optimum.AvicaStaff.UI.Doctor.PatientFlow;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.optimum.AvicaStaff.Adapters.AdapterMedication;
 import com.optimum.AvicaStaff.HttpUtils.AppServices;
 import com.optimum.AvicaStaff.Listener.ServiceListener;
 import com.optimum.AvicaStaff.Models.Medication;
-import com.optimum.AvicaStaff.Models.User;
 import com.optimum.AvicaStaff.R;
 import com.optimum.AvicaStaff.Utils.AppUtils;
-import com.optimum.AvicaStaff.Utils.UserPrefs;
 
 import java.util.ArrayList;
 
-public class MedicationActivity extends AppCompatActivity {
+public class MedicationReportActivity extends AppCompatActivity {
 
 
     RecyclerView list1;
@@ -38,6 +38,17 @@ public class MedicationActivity extends AppCompatActivity {
                 finish();
             }
         });
+        Button btn = findViewById(R.id.loginBtn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MedicationReportActivity.this, CreateMedicationActivity.class);
+                intent.putExtra("patient_data", Patient_id); // Ensure PatientList implements Serializable or Parcelable
+                startActivity(intent);
+                finish();
+
+            }
+        });
         list1=findViewById(R.id.list1);
 
         Patient_id = getIntent().getStringExtra("patient_data");
@@ -46,12 +57,12 @@ public class MedicationActivity extends AppCompatActivity {
 
     }
     public void getMedication(){
-        AppUtils.showProgressDialog(MedicationActivity.this);
+        AppUtils.showProgressDialog(MedicationReportActivity.this);
 
-        AppServices.getMedication(MedicationActivity.class.getSimpleName(), Patient_id,new ServiceListener<ArrayList<Medication>, String>() {
+        AppServices.getMedication(MedicationReportActivity.class.getSimpleName(), Patient_id,new ServiceListener<ArrayList<Medication>, String>() {
             @Override
             public void success(ArrayList<Medication> success) {
-                AppUtils.dismisProgressDialog(MedicationActivity.this);
+                AppUtils.dismisProgressDialog(MedicationReportActivity.this);
                 medicationArrayList = success;
                 setAdapter();
 
@@ -59,7 +70,7 @@ public class MedicationActivity extends AppCompatActivity {
 
             @Override
             public void error(String error) {
-                AppUtils.dismisProgressDialog(MedicationActivity.this);
+                AppUtils.dismisProgressDialog(MedicationReportActivity.this);
 
             }
         });
@@ -68,7 +79,7 @@ public class MedicationActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         list1.setLayoutManager(layoutManager);
-        adapterMedication = new AdapterMedication(MedicationActivity.this, medicationArrayList, this);
+        adapterMedication = new AdapterMedication(MedicationReportActivity.this, medicationArrayList, this);
         list1.setAdapter(adapterMedication);
 
     }

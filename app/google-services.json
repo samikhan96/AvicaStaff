@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "694883685171",
+    "project_id": "avica-8be78",
+    "storage_bucket": "avica-8be78.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694883685171:android:952ffcb04488cf85f62446",
+        "android_client_info": {
+          "package_name": "com.example.myapplication.AvicaPatient"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXA7daFsHez7GNclKU2epmM3yRpmtw4ec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694883685171:android:2f81618d9b7b7b63f62446",
+        "android_client_info": {
+          "package_name": "com.optimum.AvicaStaff"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXA7daFsHez7GNclKU2epmM3yRpmtw4ec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

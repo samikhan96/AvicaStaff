@@ -15,7 +15,6 @@ import com.optimum.AvicaStaff.Listener.ServiceListener;
 import com.optimum.AvicaStaff.Models.PatientProfile;
 import com.optimum.AvicaStaff.R;
 import com.optimum.AvicaStaff.UI.Doctor.MeasurmentsActivity;
-import com.optimum.AvicaStaff.UI.Doctor.MedicationActivity;
 import com.optimum.AvicaStaff.Utils.AppUtils;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -108,7 +107,7 @@ public class ProfileActivity extends AppCompatActivity {
         item_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProfileActivity.this, MedicationActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, MedicationReportActivity.class);
                 intent.putExtra("patient_data", Patient_id); // Ensure PatientList implements Serializable or Parcelable
                 startActivity(intent);
                 finish();

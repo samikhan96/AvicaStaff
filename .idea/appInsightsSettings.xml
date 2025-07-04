@@ -22,10 +22,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.optimum.AvicaStaff" />
+                  <option name="mobileSdkAppId" value="1:694883685171:android:2f81618d9b7b7b63f62446" />
+                  <option name="projectId" value="avica-8be78" />
+                  <option name="projectNumber" value="694883685171" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
