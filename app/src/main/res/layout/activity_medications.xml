@@ -58,6 +58,47 @@
 
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Medicine Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <!-- Username Field -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/et_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:padding="@dimen/_7sdp"
+                android:src="@drawable/medicine" />
+
+            <EditText
+                android:focusable="false"
+                android:clickable="true"
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@null"
+                android:hint="Select Doctor"
+                android:paddingLeft="@dimen/_10sdp"
+                android:textSize="@dimen/_10ssp" />
+
+        </LinearLayout>
+
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,7 +124,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:padding="@dimen/_7sdp"
-                android:src="@drawable/user" />
+                android:src="@drawable/calender" />
 
             <EditText
                 android:inputType="textCapSentences"
@@ -92,7 +133,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:background="@null"
-                android:hint="123"
+                android:hint="Enter Start Date"
                 android:paddingLeft="@dimen/_10sdp"
                 android:textSize="@dimen/_10ssp" />
 
@@ -123,7 +164,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:padding="@dimen/_7sdp"
-                android:src="@drawable/ic_sms" />
+                android:src="@drawable/calender" />
 
             <EditText
                 android:inputType="textCapSentences"
@@ -132,7 +173,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:background="@null"
-                android:hint="123"
+                android:hint="Enter End Date"
                 android:paddingLeft="@dimen/_10sdp"
                 android:textSize="@dimen/_10ssp" />
 
@@ -163,7 +204,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:padding="@dimen/_7sdp"
-                android:src="@drawable/call" />
+                android:src="@drawable/clock" />
 
             <EditText
                 android:inputType="number"
@@ -172,7 +213,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:background="@null"
-                android:hint="123"
+                android:hint="Enter Time"
                 android:paddingLeft="@dimen/_10sdp"
                 android:textSize="@dimen/_10ssp" />
 
@@ -202,7 +243,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:padding="@dimen/_7sdp"
-                android:src="@drawable/heartbeat" />
+                android:src="@drawable/medicine" />
 
             <EditText
                 android:inputType="textCapSentences"
@@ -211,7 +252,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:background="@null"
-                android:hint="123"
+                android:hint="Enter Dosage"
                 android:paddingLeft="@dimen/_10sdp"
                 android:textSize="@dimen/_10ssp" />
 
@@ -241,7 +282,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:padding="@dimen/_7sdp"
-                android:src="@drawable/heartbeat" />
+                android:src="@drawable/medicine" />
 
             <EditText
                 android:inputType="textCapSentences"
@@ -250,7 +291,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:background="@null"
-                android:hint="123"
+                android:hint="Enter Frequency"
                 android:paddingLeft="@dimen/_10sdp"
                 android:textSize="@dimen/_10ssp" />
 
@@ -279,7 +320,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:padding="@dimen/_7sdp"
-                android:src="@drawable/heartbeat" />
+                android:src="@drawable/medicine" />
 
             <EditText
                 android:inputType="textCapSentences"
@@ -288,7 +329,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:background="@null"
-                android:hint="123"
+                android:hint="Enter Medication Unit"
                 android:paddingLeft="@dimen/_10sdp"
                 android:textSize="@dimen/_10ssp" />
 
@@ -301,7 +342,7 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_30sdp"
             android:background="@drawable/btn_bg"
-            android:text="Send"
+            android:text="Add Medicine"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_14ssp" />
