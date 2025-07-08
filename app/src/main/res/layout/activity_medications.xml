@@ -127,6 +127,8 @@
                 android:src="@drawable/calender" />
 
             <EditText
+                android:clickable="true"
+                android:focusable="false"
                 android:inputType="textCapSentences"
                 android:id="@+id/et_1"
                 android:layout_width="match_parent"
@@ -167,6 +169,9 @@
                 android:src="@drawable/calender" />
 
             <EditText
+                android:clickable="true"
+                android:focusable="false"
+
                 android:inputType="textCapSentences"
                 android:id="@+id/et_2"
                 android:layout_width="match_parent"
@@ -207,6 +212,8 @@
                 android:src="@drawable/clock" />
 
             <EditText
+                android:clickable="true"
+                android:focusable="false"
                 android:inputType="number"
                 android:id="@+id/et_3"
                 android:layout_width="match_parent"
@@ -246,7 +253,7 @@
                 android:src="@drawable/medicine" />
 
             <EditText
-                android:inputType="textCapSentences"
+                android:inputType="number"
                 android:id="@+id/et_4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -285,7 +292,7 @@
                 android:src="@drawable/medicine" />
 
             <EditText
-                android:inputType="textCapSentences"
+                android:inputType="number"
                 android:id="@+id/et_5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -322,7 +329,10 @@
                 android:padding="@dimen/_7sdp"
                 android:src="@drawable/medicine" />
 
+
             <EditText
+                android:clickable="true"
+                android:focusable="false"
                 android:inputType="textCapSentences"
                 android:id="@+id/et_6"
                 android:layout_width="match_parent"

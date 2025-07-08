@@ -38,11 +38,10 @@ public class CreateMedicationActivity extends AppCompatActivity {
 
     String Patient_id;
     EditText et_name;
-    EditText et_1, et_2, et_3, et_4, et_5;
+    EditText et_1, et_2, et_3, et_4, et_5,et_6;
     ArrayList<Medicine> medicineArrayList = new ArrayList<>();
 
     private Medicine selectedDoctor = null;
-    private String selectedDoctorId = ""; // Declare at class level
 
 
     @Override
@@ -56,6 +55,7 @@ public class CreateMedicationActivity extends AppCompatActivity {
         et_3 = findViewById(R.id.et_3);
         et_4 = findViewById(R.id.et_4);
         et_5 = findViewById(R.id.et_5);
+        et_6 = findViewById(R.id.et_6);
 
 
         Button btn = findViewById(R.id.sendBtn);
@@ -67,6 +67,7 @@ public class CreateMedicationActivity extends AppCompatActivity {
                         ||et_2.getText().toString().equalsIgnoreCase("")
                         ||et_3.getText().toString().equalsIgnoreCase("")
                         ||et_4.getText().toString().equalsIgnoreCase("")
+                        ||et_6.getText().toString().equalsIgnoreCase("")
                         ||et_5.getText().toString().equalsIgnoreCase("") ){
                     AppUtils.Toast("Please fill all fields");
                 }
@@ -93,21 +94,27 @@ public class CreateMedicationActivity extends AppCompatActivity {
                 getMedicine();
             }
         });
+        et_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showUnitDialog();
+            }
+        });
 
 
+        et_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog(et_1);
+            }
+        });
+        et_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog(et_2);
+            }
+        });
         et_3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showDatePickerDialog(et_3);
-            }
-        });
-        et_4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showDatePickerDialog(et_3);
-            }
-        });
-        et_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showTimePickerDialog(et_3);
@@ -229,7 +236,6 @@ public class CreateMedicationActivity extends AppCompatActivity {
                 }
             }
             et_name.setText(selectedDoctor.getName());
-            selectedDoctorId = selectedDoctor.getId();
             dialog.dismiss();
         });
     }
@@ -246,7 +252,7 @@ public class CreateMedicationActivity extends AppCompatActivity {
             json.put("time", et_3.getText().toString());
             json.put("dosage", et_4.getText().toString());     // e.g., "10mg"
             json.put("frequency", et_5.getText().toString());  // e.g., "1" (per day)
-            json.put("unit", "TABLET");                    // e.g., "TABLET", "CAPSULE", etc.
+            json.put("unit", et_6.getText().toString());                    // e.g., "TABLET", "CAPSULE", etc.
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -267,6 +273,49 @@ public class CreateMedicationActivity extends AppCompatActivity {
                 AppUtils.dismisProgressDialog(CreateMedicationActivity.this);
 
             }
+        });
+    }
+
+    private void showUnitDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_search_medicine, null);
+        builder.setView(dialogView);
+
+        SearchView searchView = dialogView.findViewById(R.id.searchView);
+        ListView listView = dialogView.findViewById(R.id.listView);
+
+        // Units to show
+        List<String> unitList = new ArrayList<>();
+        unitList.add("TABLET");
+        unitList.add("CAPSULE");
+        unitList.add("SOFTGEL");
+        unitList.add("TEASPOON");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, unitList);
+        listView.setAdapter(adapter);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            String selectedUnit = adapter.getItem(position);
+            et_6.setText(selectedUnit);
+            dialog.dismiss();
         });
     }
 

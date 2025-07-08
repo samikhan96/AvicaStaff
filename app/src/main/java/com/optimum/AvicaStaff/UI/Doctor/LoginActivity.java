@@ -49,8 +49,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
 //        DOCTORLOGIN
-        et_email.setText("muhammadsaqib@avica.com");
-        password.setText("Doctor@123");
+//        et_email.setText("muhammadsaqib@avica.com");
+//        password.setText("Doctor@123");
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

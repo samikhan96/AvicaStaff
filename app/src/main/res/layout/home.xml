@@ -161,7 +161,7 @@
 
                             <RelativeLayout
                                 android:layout_width="300dp"
-                                android:layout_height="300dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:gravity="center_horizontal"
                                 android:orientation="vertical">
@@ -255,6 +255,14 @@
                                         android:textColor="#F7B500"
                                         android:textSize="@dimen/_11ssp" />
 
+                                    <TextView
+                                        android:id="@+id/bg_tv_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="• Low: 80 mmdb (5)"
+                                        android:textColor="@color/text_blue"
+                                        android:textSize="@dimen/_11ssp" />
+
                                 </LinearLayout>
 
                             </RelativeLayout>
@@ -290,7 +298,7 @@
 
                             <RelativeLayout
                                 android:layout_width="300dp"
-                                android:layout_height="300dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:gravity="center_horizontal"
                                 android:orientation="vertical">
@@ -383,6 +391,13 @@
                                         android:text="• Low: 80 mmdb (5)"
                                         android:textColor="#F7B500"
                                         android:textSize="@dimen/_11ssp" />
+                                    <TextView
+                                        android:id="@+id/bp_tv_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="• Low: 80 mmdb (5)"
+                                        android:textColor="@color/text_blue"
+                                        android:textSize="@dimen/_11ssp" />
                                 </LinearLayout>
 
                             </RelativeLayout>
@@ -418,7 +433,7 @@
 
                             <RelativeLayout
                                 android:layout_width="300dp"
-                                android:layout_height="300dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:gravity="center_horizontal"
                                 android:orientation="vertical">
@@ -511,6 +526,13 @@
                                         android:text="• Low: 80 mmdb (5)"
                                         android:textColor="#F7B500"
                                         android:textSize="@dimen/_11ssp" />
+                                    <TextView
+                                        android:id="@+id/Temp_tv_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="• Low: 80 mmdb (5)"
+                                        android:textColor="@color/text_blue"
+                                        android:textSize="@dimen/_11ssp" />
                                 </LinearLayout>
 
                             </RelativeLayout>
@@ -545,7 +567,7 @@
 
                             <RelativeLayout
                                 android:layout_width="300dp"
-                                android:layout_height="300dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:gravity="center_horizontal"
                                 android:orientation="vertical">
@@ -638,6 +660,13 @@
                                         android:text="• Low: 80 mmdb (5)"
                                         android:textColor="#F7B500"
                                         android:textSize="@dimen/_11ssp" />
+                                    <TextView
+                                        android:id="@+id/spo2_tv_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="• Low: 80 mmdb (5)"
+                                        android:textColor="@color/text_blue"
+                                        android:textSize="@dimen/_11ssp" />
                                 </LinearLayout>
 
                             </RelativeLayout>
@@ -672,7 +701,7 @@
 
                             <RelativeLayout
                                 android:layout_width="300dp"
-                                android:layout_height="300dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:gravity="center_horizontal"
                                 android:orientation="vertical">
@@ -764,6 +793,13 @@
                                         android:layout_height="wrap_content"
                                         android:text="• Low: 80 mmdb (5)"
                                         android:textColor="#F7B500"
+                                        android:textSize="@dimen/_11ssp" />
+                                    <TextView
+                                        android:id="@+id/ecg_tv_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="• Low: 80 mmdb (5)"
+                                        android:textColor="@color/text_blue"
                                         android:textSize="@dimen/_11ssp" />
                                 </LinearLayout>
 

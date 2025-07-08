@@ -47,11 +47,11 @@ public class DashboardActivity extends AppCompatActivity {
     NavigationView navigationView;
     CircleImageView drawer_img, profile_img;
     TextView name, drawer_name, specs, drawer_specs,
-            bg_totalReading, bg_timeStamp, bg_tv_1, bg_tv_2, bg_tv_3,
-            bp_totalReading, bp_timeStamp, bp_tv_1, bp_tv_2, bp_tv_3,
-            Temp_totalReading, Temp_timeStamp, Temp_tv_1, Temp_tv_2, Temp_tv_3,
-            spo2_totalReading, spo2_timeStamp, spo2_tv_1, spo2_tv_2, spo2_tv_3,
-            ecg_totalReading, ecg_timeStamp, ecg_tv_1, ecg_tv_2, ecg_tv_3;
+            bg_totalReading, bg_timeStamp, bg_tv_1, bg_tv_2, bg_tv_3, bg_tv_4,
+            bp_totalReading, bp_timeStamp, bp_tv_1, bp_tv_2, bp_tv_3, bp_tv_4,
+            Temp_totalReading, Temp_timeStamp, Temp_tv_1, Temp_tv_2, Temp_tv_3, Temp_tv_4,
+            spo2_totalReading, spo2_timeStamp, spo2_tv_1, spo2_tv_2, spo2_tv_3, spo2_tv_4,
+            ecg_totalReading, ecg_timeStamp, ecg_tv_1, ecg_tv_2, ecg_tv_3, ecg_tv_4;
     LinearLayout l2, l3;
     User user;
     DonutChartView bg_donutChart, bp_donutChart, Temp_donutChart, spo2_donutChart, ecg_donutChart;
@@ -87,6 +87,7 @@ public class DashboardActivity extends AppCompatActivity {
         bg_tv_1 = findViewById(R.id.bg_tv_1);
         bg_tv_2 = findViewById(R.id.bg_tv_2);
         bg_tv_3 = findViewById(R.id.bg_tv_3);
+        bg_tv_4 = findViewById(R.id.bg_tv_4);
 
         bp_donutChart = findViewById(R.id.bp_donutChart);
         bp_totalReading = findViewById(R.id.bp_totalReading);
@@ -94,6 +95,7 @@ public class DashboardActivity extends AppCompatActivity {
         bp_tv_1 = findViewById(R.id.bp_tv_1);
         bp_tv_2 = findViewById(R.id.bp_tv_2);
         bp_tv_3 = findViewById(R.id.bp_tv_3);
+        bp_tv_4 = findViewById(R.id.bp_tv_4);
 
         Temp_donutChart = findViewById(R.id.Temp_donutChart);
         Temp_totalReading = findViewById(R.id.Temp_totalReading);
@@ -101,6 +103,7 @@ public class DashboardActivity extends AppCompatActivity {
         Temp_tv_1 = findViewById(R.id.Temp_tv_1);
         Temp_tv_2 = findViewById(R.id.Temp_tv_2);
         Temp_tv_3 = findViewById(R.id.Temp_tv_3);
+        Temp_tv_4 = findViewById(R.id.Temp_tv_4);
 
         spo2_donutChart = findViewById(R.id.spo2_donutChart);
         spo2_totalReading = findViewById(R.id.spo2_totalReading);
@@ -108,6 +111,7 @@ public class DashboardActivity extends AppCompatActivity {
         spo2_tv_1 = findViewById(R.id.spo2_tv_1);
         spo2_tv_2 = findViewById(R.id.spo2_tv_2);
         spo2_tv_3 = findViewById(R.id.spo2_tv_3);
+        spo2_tv_4 = findViewById(R.id.spo2_tv_4);
 
         ecg_donutChart = findViewById(R.id.ecg_donutChart);
         ecg_totalReading = findViewById(R.id.ecg_totalReading);
@@ -115,6 +119,7 @@ public class DashboardActivity extends AppCompatActivity {
         ecg_tv_1 = findViewById(R.id.ecg_tv_1);
         ecg_tv_2 = findViewById(R.id.ecg_tv_2);
         ecg_tv_3 = findViewById(R.id.ecg_tv_3);
+        ecg_tv_4 = findViewById(R.id.ecg_tv_4);
 
         name.setText(user.first_name + " " + user.last_name);
         drawer_name.setText(user.first_name + " " + user.last_name);
@@ -249,9 +254,9 @@ public class DashboardActivity extends AppCompatActivity {
         // Example values
         int[] values = {high, normal, low, pending};
         int[] colors = {
+                0xFFEF5DA8,
                 0xFF2CC97D,
                 0xFFF7B500,
-                0xFFEF5DA8,
                 0xFF0B75F9
         };
         bg_donutChart.setValues(values);
@@ -266,9 +271,9 @@ public class DashboardActivity extends AppCompatActivity {
         // Example values
         int[] values = {high, normal, low,pending};
         int[] colors = {
+                0xFFEF5DA8,
                 0xFF2CC97D,
                 0xFFF7B500,
-                0xFFEF5DA8,
                 0xFF0B75F9
 
         };
@@ -284,9 +289,9 @@ public class DashboardActivity extends AppCompatActivity {
         // Example values
         int[] values = {high, normal, low,pending};
         int[] colors = {
+                0xFFEF5DA8,
                 0xFF2CC97D,
                 0xFFF7B500,
-                0xFFEF5DA8,
                 0xFF0B75F9
 
         };
@@ -302,9 +307,9 @@ public class DashboardActivity extends AppCompatActivity {
         // Example values
         int[] values = {high, normal, low,pending};
         int[] colors = {
+                0xFFEF5DA8,
                 0xFF2CC97D,
                 0xFFF7B500,
-                0xFFEF5DA8,
                 0xFF0B75F9
 
         };
@@ -320,9 +325,9 @@ public class DashboardActivity extends AppCompatActivity {
         // Example values
         int[] values = {high, normal, low,pending};
         int[] colors = {
+                0xFFEF5DA8,
                 0xFF2CC97D,
                 0xFFF7B500,
-                0xFFEF5DA8,
                 0xFF0B75F9
 
         };
@@ -384,6 +389,7 @@ public class DashboardActivity extends AppCompatActivity {
         bg_tv_1.setText("• High:   " + "(" + dashboardBg.high + ")");
         bg_tv_2.setText("• Normal:   " + "(" + dashboardBg.normal + ")");
         bg_tv_3.setText("• Low:   " + "(" + dashboardBg.low + ")");
+        bg_tv_4.setText("• Alert Not set:   " + "(" + dashboardBg.alert_not_set + ")");
         bg_timeStamp.setText("6 pm 12-06-20");
         setupBgPieChart(dashboardBg.high, dashboardBg.normal, dashboardBg.low,dashboardBg.alert_not_set);
     }
@@ -392,6 +398,7 @@ public class DashboardActivity extends AppCompatActivity {
         bp_tv_1.setText("• High:   " + "(" + dashboardBp.high + ")");
         bp_tv_2.setText("• Normal:   " + "(" + dashboardBp.normal + ")");
         bp_tv_3.setText("• Low:   " + "(" + dashboardBp.low + ")");
+        bp_tv_4.setText("• Alert Not set:   " + "(" + dashboardBp.alert_not_set + ")");
         bp_timeStamp.setText("6 pm 12-06-20");
         setupBpPieChart(dashboardBp.high, dashboardBp.normal, dashboardBp.low,dashboardBp.alert_not_set);
     }
@@ -400,6 +407,7 @@ public class DashboardActivity extends AppCompatActivity {
         Temp_tv_1.setText("• High:   " + "(" + dashboardTemp.high + ")");
         Temp_tv_2.setText("• Normal:   " + "(" + dashboardTemp.normal + ")");
         Temp_tv_3.setText("• Low:   " + "(" + dashboardTemp.low + ")");
+        Temp_tv_4.setText("• Alert Not set:   " + "(" + dashboardTemp.alert_not_set + ")");
         Temp_timeStamp.setText("6 pm 12-06-20");
         setupTempPieChart(dashboardTemp.high, dashboardTemp.normal, dashboardTemp.low,dashboardTemp.alert_not_set);
     }
@@ -408,6 +416,7 @@ public class DashboardActivity extends AppCompatActivity {
         spo2_tv_1.setText("• High:   " + "(" + dashboardspo2.high + ")");
         spo2_tv_2.setText("• Normal:   " + "(" + dashboardspo2.normal + ")");
         spo2_tv_3.setText("• Low:   " + "(" + dashboardspo2.low + ")");
+        spo2_tv_4.setText("• Alert Not set:   " + "(" + dashboardspo2.alert_not_set + ")");
         spo2_timeStamp.setText("6 pm 12-06-20");
         setupspo2PieChart(dashboardspo2.high, dashboardspo2.normal, dashboardspo2.low,dashboardspo2.alert_not_set);
     }
@@ -416,6 +425,7 @@ public class DashboardActivity extends AppCompatActivity {
         ecg_tv_1.setText("• High:   " + "(" + dashboardECG.high + ")");
         ecg_tv_2.setText("• Normal:   " + "(" + dashboardECG.normal + ")");
         ecg_tv_3.setText("• Low:   " + "(" + dashboardECG.low + ")");
+        ecg_tv_4.setText("• Alert Not set:   " + "(" + dashboardECG.alert_not_set + ")");
         ecg_timeStamp.setText("6 pm 12-06-20");
         setupecgPieChart(dashboardECG.high, dashboardECG.normal, dashboardECG.low,dashboardECG.alert_not_set);
     }
