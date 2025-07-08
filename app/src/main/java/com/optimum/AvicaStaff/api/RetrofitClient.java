@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.util.concurrent.TimeUnit;
 
 public class RetrofitClient {
-    private static final String BASE_URL = "https://avica.up.railway.app/";
+    private static final String BASE_URL = "https://api.avica.health/";
     private static volatile Retrofit retrofit; // Use volatile for thread safety
 
     // Private constructor to prevent instantiation

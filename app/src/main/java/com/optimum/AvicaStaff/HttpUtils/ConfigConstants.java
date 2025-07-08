@@ -25,6 +25,8 @@ public class ConfigConstants {
     public static final String uploader = "/web/uploader";
     public static final String Createeducation = "/web/education";
     public static final String getTutorials = "/web/videos";
+    public static final String getMedicine = "/web/doctor/organization/medications?search=";
+    public static final String CreateMedication = "/web/medications/patients/";
 
 
 }

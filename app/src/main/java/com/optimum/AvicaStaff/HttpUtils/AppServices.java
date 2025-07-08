@@ -11,6 +11,7 @@ import com.optimum.AvicaStaff.Models.DashboardData;
 import com.optimum.AvicaStaff.Models.DoctorProfile.ProfileData;
 import com.optimum.AvicaStaff.Models.Education;
 import com.optimum.AvicaStaff.Models.Medication;
+import com.optimum.AvicaStaff.Models.Medicine;
 import com.optimum.AvicaStaff.Models.Notifications;
 import com.optimum.AvicaStaff.Models.PatientList;
 import com.optimum.AvicaStaff.Models.PatientProfile;
@@ -418,6 +419,48 @@ public class AppServices {
             }
         });
     }
+
+    public static void getMedicine(String TAG, final ServiceListener<ArrayList<Medicine>, String> listener) {
+        RestAPI.GetUrlEncodedRequest(TAG, ConfigConstants.getMedicine, new ServiceListener<JSONObject, VolleyError>() {
+            @Override
+            public void success(JSONObject success) {
+                try {
+                    ArrayList<Medicine> data = new ArrayList<>(Arrays.asList(GsonUtils.fromJSON(success.getJSONArray("data").toString(), Medicine[].class)));
+                    listener.success(data);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void error(VolleyError error) {
+                listener.error(error.getMessage());
+            }
+        });
+
+    }
+
+    public static void CreateMedication(String TAG,String patientId,JSONObject userObject, final ServiceListener<String, String> listener) {
+        RestAPI.PostJsonRequest(TAG, ConfigConstants.CreateMedication+patientId, userObject, new ServiceListener<JSONObject, VolleyError>() {
+            @Override
+            public void success(JSONObject success) {
+                try {
+                    if (success.getBoolean("success")) {
+                        listener.success(success.getJSONObject("data").toString());
+                    } else listener.error(success.getJSONObject("data").toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void error(VolleyError error) {
+                listener.error(error.getMessage());
+            }
+        });
+
+    }
+
 
 
 }
